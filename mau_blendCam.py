@@ -34,7 +34,7 @@ def blendCam():
     weight = nuke.Double_Knob('weight','weight')
     blendCam.addKnob(weight)
 
-    #adding expression into Cammera's translation, rotation and focal length
+    #adding expression into Camera's translation, rotation and focal length
     blendCam.knob('translate').setExpression('((1-weight)*'+orig+'.translate)-('+dest+'.translate*-1*weight)')
     blendCam.knob('rotate').setExpression('((1-weight)*'+orig+'.rotate)-('+dest+'.rotate*-1*weight)')
     blendCam.knob('focal').setExpression('((1-weight)*'+orig+'.focal)-('+dest+'.focal*-1*weight)')
